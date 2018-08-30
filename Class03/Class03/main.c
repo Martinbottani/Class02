@@ -1,23 +1,28 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
 
-int getEdad(int* pEdad);
+//int getEdad(int* pEdad);
+int getEntero(int* pRes, int reint, char* msg, char* msgError, char* msgError2, int max, int min);
 
 int main()
 {
-    int edad;
-    if(getEdad(&edad) == 0)
+    int n;
+    int reint = 3;
+    int max = 199;
+    int min = 0;
+    if(getEntero(&n, reint, "Dame tu edad:\n", "Te fuiste del rango.\n", "La edad es numerica.\n", max, min) == 0)
     {
-        printf("La edad es: %d", edad);
+        printf("La edad es: %d", n);
     }
     return 0;
 }
-
+/*
 int getEdad(int* pEdad)
 {
     int retorno = -1;
     int auxiliarEdad;
-    for(int reintentos = 3; reintentos > 0; reintentos--)
+    int reintentos;
+    for(reintentos = 3; reintentos > 0; reintentos--)
     {
         printf("Dame tu edad: \n");
         if(scanf("%d", &auxiliarEdad) == 1)
@@ -34,6 +39,34 @@ int getEdad(int* pEdad)
         }else
         {
             printf("La edad es numerica\n");
+            __fpurge(stdin);
+        }
+    }
+
+    return retorno;
+}
+*/
+int getEntero(int* pRes, int reint, char* msg,char* msgError,char* msgError2, int max, int min)
+{
+    int retorno = -1;
+    int auxiliarEdad;
+    for(; reint > 0; reint--)
+    {
+        printf(msg);
+        if(scanf("%d", &auxiliarEdad) == 1)
+        {
+            if(auxiliarEdad >= min && auxiliarEdad <= max)
+            {
+                *pRes = auxiliarEdad;
+                retorno = 0;
+                break;
+            }else
+            {
+                printf(msgError);
+            }
+        }else
+        {
+            printf(msgError2);
             __fpurge(stdin);
         }
     }
