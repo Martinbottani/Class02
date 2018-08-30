@@ -7,10 +7,7 @@ int getEntero(int* pRes, int reint, char* msg, char* msgError, char* msgError2, 
 int main()
 {
     int n;
-    int reint = 3;
-    int max = 199;
-    int min = 0;
-    if(getEntero(&n, reint, "Dame tu edad:\n", "Te fuiste del rango.\n", "La edad es numerica.\n", max, min) == 0)
+    if(getEntero(&n, 3, "Dame tu edad:\n", "Te fuiste del rango.\n", "La edad es numerica.\n", 199, 0) == 0)
     {
         printf("La edad es: %d", n);
     }
