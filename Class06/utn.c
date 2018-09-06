@@ -1,6 +1,7 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
 #include "utn.h"
+#include "array.h"
 #include <string.h>
 
 /**
@@ -16,7 +17,6 @@
 
 static int getFloat(float* pResultado);
 static int getInt(int* pResultado);
-
 int utn_menu(float numero1,float numero2)
 {
     int opcion;
@@ -190,7 +190,7 @@ static int getFloat(float* pResultado)
 
 static int getInt(int* pResultado)
 {
-
+    /*
     int ret=-1;
     int num;
 
@@ -200,4 +200,16 @@ static int getInt(int* pResultado)
         ret=0;
     }
     return ret;
+    */
+    int aux;
+    char cadena[64];
+    scanf("%s", cadena);
+    if(utn_esNumero(cadena) == 0)
+    {
+        aux = atoi(cadena);
+        *pResultado = aux;
+        return 0;
+    }
+    return -1;
 }
+

@@ -118,3 +118,22 @@ int utn_calcularPromedioArray(int* pArray,int limite,float* promedio)
 
     return retorno;
 }
+int utn_esNumero(char* pCadena)
+{
+    int retorno = 0;
+    char aux;
+    int i= 0;
+    aux = pCadena[i];
+    while(aux != 0)
+    {
+        if(aux < 48 || aux > 57)
+        {
+            retorno = -1;
+            break;
+        }
+        i++;
+        aux = pCadena[i];
+    }
+
+    return retorno;
+}
