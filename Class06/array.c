@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "array.h"
 #include <string.h>
+#define CANTIDAD_EMPLEADOS 5
 #define DATO_INVALIDO -1
 #define true 1
 #define false 0
@@ -133,6 +134,47 @@ int utn_esNumero(char* pCadena)
         }
         i++;
         aux = pCadena[i];
+    }
+
+    return retorno;
+}
+int utn_ordenarArray(int* pArray, int limite, char menorMayor)
+{
+    int retorno = -1;
+    int i = 0;
+    int aux = 0;
+    int flagOrdenar = 1;
+    if(pArray != NULL && limite >0)
+    {
+         while(flagOrdenar == 1)
+        {
+            flagOrdenar = 0;
+            for(i = 0; i < limite -1; i++)
+            {
+                if(menorMayor == '>')
+                {
+                    if(pArray[i] > pArray[i+1])
+                    {
+                        aux = pArray[i];
+                        pArray[i] = pArray[i+1];
+                        pArray[i+1] = aux;
+                        flagOrdenar = 1;
+                    }
+                }
+                else if(menorMayor == '<')
+                {
+                    if(pArray[i] < pArray[i+1])
+                    {
+                        aux = pArray[i];
+                        pArray[i] = pArray[i+1];
+                        pArray[i+1] = aux;
+                        flagOrdenar = 1;
+                    }
+                }
+                //printf("\nIndex ordenado es:[%d] - Value:%d - Add:%p",i,pArray[i],pArray+i);
+            }
+            retorno = 0;
+        }
     }
 
     return retorno;

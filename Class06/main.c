@@ -12,6 +12,7 @@
 
 int main()
 {
+    char menorMayor;
     int edades[CANTIDAD_EMPLEADOS];
     int i;
     int maximo;
@@ -22,7 +23,9 @@ int main()
     {
         printf("La direccion del array esta mal");
     }
-
+    printf("Como queres ordenar el Array?: > o <\n");
+    __fpurge(stdin);
+    scanf("%c", &menorMayor);
     for(i=0;i< CANTIDAD_EMPLEADOS;i++)
     {
 
@@ -36,6 +39,15 @@ int main()
 
     utn_mostrarArray(edades,CANTIDAD_EMPLEADOS);
     //utn_mostrarArray(edades+2,CANTIDAD_EMPLEADOS-2);
+    if(utn_ordenarArray(edades, CANTIDAD_EMPLEADOS,menorMayor)==-1)
+    {
+        printf("\nEl orden no se pudo hacer porque esta mal la direccion del Array");
+    }
+    else
+    {
+        printf("\nEl array ordenado es:\n");
+        utn_mostrarArray(edades,CANTIDAD_EMPLEADOS);
+    }
     utn_calcularMaximoArray(edades,CANTIDAD_EMPLEADOS,&maximo);
     utn_calcularMinimoArray(edades,CANTIDAD_EMPLEADOS,&minimo);
     utn_calcularPromedioArray(edades,CANTIDAD_EMPLEADOS,&promedio);
@@ -43,5 +55,6 @@ int main()
     printf("\nEl minimo es: %d\n",minimo);
     printf("\nEl promedio es: %.2f\n",promedio);
     return 0;
+
 }
 
