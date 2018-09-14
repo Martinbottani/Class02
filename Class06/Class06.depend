@@ -1,25 +1,25 @@
 # depslib dependency file v1.0
-1536282753 source:/home/alumno/Escritorio/Class02/Class06/main.c
+1536878936 source:/home/alumno/Escritorio/Class02/Class06/main.c
 	<stdio_ext.h>
 	<stdlib.h>
 	"utn.h"
 	"array.h"
 	<string.h>
 
-1536282822 source:/home/alumno/Escritorio/Class02/Class06/array.c
+1536788327 source:/home/alumno/Escritorio/Class02/Class06/array.c
 	<stdio_ext.h>
 	<stdlib.h>
 	"array.h"
 	<string.h>
 
-1536282590 /home/alumno/Escritorio/Class02/Class06/array.h
+1536788327 /home/alumno/Escritorio/Class02/Class06/array.h
 
-1536280478 source:/home/alumno/Escritorio/Class02/Class06/utn.c
+1536788327 source:/home/alumno/Escritorio/Class02/Class06/utn.c
 	<stdio_ext.h>
 	<stdlib.h>
 	"utn.h"
 	"array.h"
 	<string.h>
 
-1536276092 /home/alumno/Escritorio/Class02/Class06/utn.h
+1536788327 /home/alumno/Escritorio/Class02/Class06/utn.h
 

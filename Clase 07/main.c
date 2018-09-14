@@ -10,8 +10,8 @@ int main()
     char nombres[15][50];
     for(i = 0; i < CANTIDAD_EDADES; i++)
     {
-        utn_getNombre(&nombres[15][50], 3, "Ingresa tu nombre: \n", "Error \n");
-        if(utn_getNumeroDecimal(edades, 3, "Ingrese la edad: \n", "Error \n", 200, 0) == -1)
+        utn_getNombre(&nombres[i][j], 3, "Ingresa tu nombre: \n", "Error \n");
+        if(utn_getNumeroDecimal(&edades[i], 3, "Ingrese la edad: \n", "Error \n", 200, 0) == -1)
         {
             edades[i] = -1;
         }
