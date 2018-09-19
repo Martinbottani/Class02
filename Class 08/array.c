@@ -1,4 +1,4 @@
-#include <stdio_ext.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "array.h"
 #include <string.h>
@@ -30,12 +30,11 @@ int utn_mostrarArray(float* pArray,int limite)
     int i;
     for(i=0;i < limite;i++)
     {
-        printf("\nIndex:[%f] - Value:%f - Add:%p",i,pArray[i],pArray+i);
+        printf("\nIndex:[%d] - Value:%d",i,(int)pArray[i]);
     }
 
     return 0;
 }
-
 int utn_calcularMaximoArray(int* pArray,int limite,int* pMaximo)
 {
     int i;

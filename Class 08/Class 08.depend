@@ -21,3 +21,25 @@
 	"utn.h"
 	<string.h>
 
+1537302423 source:c:\users\martin\desktop\utn\class02\class 08\array.c
+	<stdio.h>
+	<stdlib.h>
+	"array.h"
+	<string.h>
+
+1537380643 c:\users\martin\desktop\utn\class02\class 08\array.h
+
+1537380622 source:c:\users\martin\desktop\utn\class02\class 08\main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"array.h"
+
+1537301990 c:\users\martin\desktop\utn\class02\class 08\utn.h
+
+1537301982 source:c:\users\martin\desktop\utn\class02\class 08\utn.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	<string.h>
+

@@ -65,5 +65,6 @@
 */
 int utn_getNumeroDecimal(float* pNum, int reint, char* msg, char* msgError, float max, float min);
 int utn_getNombre(char* pNombre, int reint, char* msg, char* msgError);
-int isFloat(char* pBuffer);
+int utn_getFloat(float* pResultado);
+int utn_getTelefono(float* pResultado);
 #endif // UTN_H_INCLUDED

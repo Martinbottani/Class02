@@ -1,4 +1,4 @@
-#include <stdio_ext.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "utn.h"
 #include "array.h"
@@ -6,8 +6,18 @@
 void insertion(int data[],int len);
 int main()
 {
+
     int i;
-    int edades[CANTIDAD_EDADES];
+    float edades[CANTIDAD_EDADES];
+    for(i = 0; i < CANTIDAD_EDADES; i++)
+    {
+        if(utn_getNumeroDecimal(&edades[i], 3, "Ingrese la edad: \n", "Error \n", 200, 0) == -1)
+        {
+            edades[i] = -1;
+        }
+    }
+    utn_mostrarArray(edades,CANTIDAD_EDADES);
+    /*
     for(i = 0; i < CANTIDAD_EDADES; i++)
     {
         printf("Ingrese la edad: \n");
@@ -24,8 +34,10 @@ int main()
     {
         printf("%d\n", edades[i]);
     }
+    */
     return 0;
 }
+/*
 void insertion(int data[],int len)
 {
      int i,j;
@@ -42,3 +54,4 @@ void insertion(int data[],int len)
         data[j+1]=temp; // inserción
      }
 }
+*/

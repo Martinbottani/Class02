@@ -13,3 +13,17 @@
 	"utn.h"
 	<string.h>
 
+1537246730 source:c:\users\martin\desktop\utn\class02\class 08 part 2\main.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1537246730 c:\users\martin\desktop\utn\class02\class 08 part 2\utn.h
+
+1537248190 source:c:\users\martin\desktop\utn\class02\class 08 part 2\utn.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	<string.h>
+

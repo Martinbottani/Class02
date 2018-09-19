@@ -1,4 +1,4 @@
-#include <stdio_ext.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "utn.h"
 #include <string.h>
@@ -118,7 +118,7 @@ static int getString(char* pBuffer, int limite)
     char bufferString[4096];
     if(pBuffer != NULL && limite > 0)
     {
-        __fpurge(stdin);
+        fflush(stdin);
         fgets(pBuffer, sizeof(pBuffer), stdin);
         if(pBuffer[strlen(pBuffer) - 1] == '\n')
         {
