@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1537393419 source:/home/alumno/Escritorio/Class02/Class09/array.c
+	<stdio.h>
+	<stdlib.h>
+	"array.h"
+	<string.h>
+
+1537393325 /home/alumno/Escritorio/Class02/Class09/array.h
+
+1537401812 source:/home/alumno/Escritorio/Class02/Class09/producto.c
+	<stdio_ext.h>
+	<stdlib.h>
+	"producto.h"
+	<string.h>
+
+1537402778 /home/alumno/Escritorio/Class02/Class09/producto.h
+
+1537393325 source:/home/alumno/Escritorio/Class02/Class09/utn.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	<string.h>
+
+1537393325 /home/alumno/Escritorio/Class02/Class09/utn.h
+
+1537401713 source:/home/alumno/Escritorio/Class02/Class09/main.c
+	<stdio.h>
+	<stdlib.h>
+	"producto.h"
+	<string.h>
+

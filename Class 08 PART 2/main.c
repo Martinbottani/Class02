@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "utn.h"
@@ -58,9 +58,9 @@ void altaPersona(Persona* pPer)
     float alturaAux;
     if(utn_getNombre(nombreAux,3,"Ingrese su nombre","Error no es un nombre valido") == 0)
     {
-        if(utn_getEntero(edadAux,3,"Ingrese su edad","Error no es una edad valida", 200, 0) == 0)
+        if(utn_getEntero(&edadAux,3,"Ingrese su edad","Error no es una edad valida", 200, 0) == 0)
         {
-            if(utn_getNumeroDecimal(alturaAux,3,"Ingrese su altura","Error no es una altura valida", 10, 5))
+            if(utn_getNumeroDecimal(&alturaAux,3,"Ingrese su altura","Error no es una altura valida", 10, 5))
             {
                 pPer->altura = alturaAux;
                 pPer->edad = edadAux;
