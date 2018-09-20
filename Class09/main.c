@@ -42,6 +42,7 @@ int utn_cargarDatoArray(Producto* p, int index, int limite)
                 strcpy(p[index].descripcion,descripcionAux);
                 p[index].precio = precioAux;
                 p[index].isEmpty = 0;
+                //p[index].ID = generarID;
                 retorno = 0;
             }
         }
@@ -112,9 +113,10 @@ int utn_menu(Producto* productos, int limite)
     return 0;
 }
 /*
-    int cont;
+
     int generarID(void)
     {
+        static int cont = -1; //es privada de la funcion, además no muere
         return cont++;
     }
 */
