@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1537492253 source:/home/alumno/Escritorio/Class02/Modelodeparcial/utn.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1537484290 /home/alumno/Escritorio/Class02/Modelodeparcial/utn.h
+
+1537492351 source:/home/alumno/Escritorio/Class02/Modelodeparcial/main.c
+	<stdio_ext.h>
+	<stdlib.h>
+	"pantallas.h"
+	"utn.h"
+
+1537490866 /home/alumno/Escritorio/Class02/Modelodeparcial/pantallas.h
+
+1537491522 source:/home/alumno/Escritorio/Class02/Modelodeparcial/pantallas.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"pantallas.h"
+	"utn.h"
+

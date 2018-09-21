@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1537406517 source:/home/alumno/CARATA2018/clase9/main.c
+	<stdio.h>
+	<stdlib.h>
+	"producto.h"
+
+1537406749 source:/home/alumno/CARATA2018/clase9/producto.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"producto.h"
+
+1537402966 /home/alumno/CARATA2018/clase9/producto.h
+
