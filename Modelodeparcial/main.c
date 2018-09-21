@@ -15,7 +15,7 @@ int main()
 
     do
     {
-    utn_getEntero(&op,3,"\n1-Cargar un pantalla\n2-Imprimir lista de la pantalla\n3-Modificar un ID\n4-Salir\n","Error\n",4,0);
+    utn_getEntero(&op,3,"\n1-Cargar un pantalla\n2-Imprimir lista de la pantalla\n3-Modificar un ID\n4-Salir\n","Error\n",5,0);
         switch(op)
         {
             case 1:

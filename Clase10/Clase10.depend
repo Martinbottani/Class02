@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1537487893 source:/home/profesor/Ernesto/LABO1/Clase10/main.c
+	<stdio.h>
+	<stdlib.h>
+	"Pantalla.h"
+	"utn.h"
+
+1537487817 source:/home/profesor/Ernesto/LABO1/Clase10/utn.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"utn.h"
+
+1537485915 /home/profesor/Ernesto/LABO1/Clase10/utn.h
+
+1537492071 source:/home/profesor/Ernesto/LABO1/Clase10/Pantalla.c
+	"Pantalla.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"utn.h"
+
+1537492064 /home/profesor/Ernesto/LABO1/Clase10/Pantalla.h
+
