@@ -13,7 +13,10 @@ int idPantalla;
 int cliente_cargarDatosVacio(Contratacion* cliente, int limite);
 int cliente_cargarIndice(Contratacion* cliente,int indice,int limite, int idPantalla);
 int prod_getEmptyIndexCliente(Contratacion* cliente,int limite,int* indiceVacio);
-int mostrarContrataciones(Contratacion* cliente,int limite, Pantalla* pantalla);
-int buscarContratacionPorCUIT(Contratacion* cliente, int limite, char* cuitCliente);
+int mostrarContrataciones(Contratacion* cliente,int limite, Pantalla* pantalla, char* cuitCliente);
+int buscarContratacionPorCUIT(Contratacion* cliente, int limite, char* cuitCliente, int id);
 int modificarContratacion(Contratacion* cliente, int indice, int limite);
+int borrarContratacionPorID(Contratacion* cliente, int id, int limite, char* cuitCliente);
+int mostrarImporteDeContrataciones(Contratacion* cliente,int limite, Pantalla* pantalla, char* cuitCliente);
+int mostrarContratacionesTotales(Contratacion* cliente,int limite, Pantalla* pantalla);
 #endif // CONTRATACION_H_INCLUDED

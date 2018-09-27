@@ -16,9 +16,13 @@ int main()
     int salir=0;
     cargarDatosVacio(pant,CANT_PANTALLAS);
     cliente_cargarDatosVacio(cliente, CANT_CONTRATACIONES);
+    altaForzada(pant, CANT_PANTALLAS, "LG", 1, "CALLE FALSA 123", 1500);
+    altaForzada(pant, CANT_PANTALLAS, "SAMSUNG", 1, "CALLE FALSA 1234", 1300);
+    altaForzada(pant, CANT_PANTALLAS, "MAINCRAFT", 0, "QUEPASOQUEPASO456", 800);
+    altaForzada(pant, CANT_PANTALLAS, "ROBLOX", 0, "NOSE 123", 950);
     do
     {
-    utn_getEntero(&op,3,"\n1-Cargar un pantalla\n2-Imprimir lista de la pantalla\n3-Modificar un ID\n4-Borrar ID\n5-Contratar una pantalla\n6-Modificar contratacion\n7-Salir\n","Error\n",8,0);
+    utn_getEntero(&op,3,"\n1-Cargar un pantalla\n2-Imprimir lista de la pantalla\n3-Modificar un ID\n4-Borrar ID\n5-Contratar una pantalla\n6-Modificar contratacion\n7-Cancelar contratacion\n8-Consultar facturacion\n9-Mostrar contrataciones\n10-Salir\n","Error\n",11,0);
         switch(op)
         {
                 case 1:
@@ -29,7 +33,7 @@ int main()
                     }
                     else
                     {
-                        printf("No hay indice.");
+                        printf("\nNo hay indice.\n");
                     }
                     break;
                 case 2:
@@ -44,7 +48,7 @@ int main()
                         }
                         else
                         {
-                            printf("Error, indice invalido.");
+                            printf("\nError, indice invalido.\n");
                         }
                     }
                     break;
@@ -57,7 +61,7 @@ int main()
                         }
                         else
                         {
-                            printf("Error, indice invalido.");
+                            printf("\nError, indice invalido.\n");
                         }
                     }
                     break;
@@ -74,7 +78,7 @@ int main()
                             }
                             else
                             {
-                                printf("Error, id invalido.");
+                                printf("\nError, id invalido.\n");
                             }
                         }
                     }
@@ -83,9 +87,9 @@ int main()
                     printf("Cuit del Cliente: ");
                     if(utn_getString(cuitCliente, 50) == 0)
                     {
-                        if(buscarContratacionPorCUIT(cliente, CANT_CONTRATACIONES, cuitCliente) == 0)
+                        if(buscarContratacionPorCUIT(cliente, CANT_CONTRATACIONES, cuitCliente, id) == 0)
                         {
-                            mostrarContrataciones(cliente, CANT_CONTRATACIONES, pant);
+                            mostrarContrataciones(cliente, CANT_CONTRATACIONES, pant, cuitCliente);
                             if(utn_getEntero(&id,2,"\nElija el ID de la pantalla que quiere modificar: ", "Error", CANT_PANTALLAS, -1) == 0)
                             {
                                 if(buscarPantallaPorID(pant, CANT_PANTALLAS, id) != -1)
@@ -95,14 +99,54 @@ int main()
                                 }
                                 else
                                 {
-                                    printf("Error, id invalido.");
+                                    printf("\nError, id invalido.\n");
+
+                                }
+                            }
+                        }
+                        else
+                        {
+                            printf("\nError, no tiene ninguna pantalla contratada.\n");
+                        }
+                    }
+                    break;
+                case 7:
+                    printf("Cuit del Cliente: ");
+                    if(utn_getString(cuitCliente, 50) == 0)
+                    {
+                        if(buscarContratacionPorCUIT(cliente, CANT_CONTRATACIONES, cuitCliente, id) == 0)
+                        {
+                            mostrarContrataciones(cliente, CANT_CONTRATACIONES, pant, cuitCliente);
+                            if(utn_getEntero(&id,2,"\nElija el ID de la pantalla que quiere cancelar la contratacion: ", "Error", CANT_PANTALLAS, -1) == 0)
+                            {
+                                if(buscarPantallaPorID(pant, CANT_PANTALLAS, id) != -1)
+                                {
+                                    borrarContratacionPorID(cliente, id, CANT_CONTRATACIONES, cuitCliente);
+                                    break;
+                                }
+                                else
+                                {
+                                    printf("\nError, id invalido.\n");
 
                                 }
                             }
                         }
                     }
                     break;
-                case 7:
+                case 8:
+                    printf("Cuit del Cliente: ");
+                    if(utn_getString(cuitCliente, 50) == 0)
+                    {
+                        if(buscarContratacionPorCUIT(cliente, CANT_CONTRATACIONES, cuitCliente, id) == 0)
+                        {
+                            mostrarImporteDeContrataciones(cliente,CANT_CONTRATACIONES, pant, cuitCliente);
+                        }
+                    }
+                    break;
+                case 9:
+                    mostrarContratacionesTotales(cliente,CANT_CONTRATACIONES, pant);
+                    break;
+                case 10:
                 salir = 1;
         }
     }while(salir==0);

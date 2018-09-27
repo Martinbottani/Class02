@@ -1,29 +1,29 @@
 # depslib dependency file v1.0
-1537492253 source:/home/alumno/Escritorio/Class02/Modelodeparcial/utn.c
+1538084070 source:/home/alumno/Escritorio/Class02/Modelodeparcial/utn.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
 	"utn.h"
 
-1537484290 /home/alumno/Escritorio/Class02/Modelodeparcial/utn.h
+1538084070 /home/alumno/Escritorio/Class02/Modelodeparcial/utn.h
 
-1538010158 source:/home/alumno/Escritorio/Class02/Modelodeparcial/main.c
+1538091874 source:/home/alumno/Escritorio/Class02/Modelodeparcial/main.c
 	<stdio_ext.h>
 	<stdlib.h>
 	"pantallas.h"
 	"utn.h"
 	"contratacion.h"
 
-1538002484 /home/alumno/Escritorio/Class02/Modelodeparcial/pantallas.h
+1538090135 /home/alumno/Escritorio/Class02/Modelodeparcial/pantallas.h
 
-1538003934 source:/home/alumno/Escritorio/Class02/Modelodeparcial/pantallas.c
+1538090200 source:/home/alumno/Escritorio/Class02/Modelodeparcial/pantallas.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
 	"pantallas.h"
 	"utn.h"
 
-1538009891 source:/home/alumno/Escritorio/Class02/Modelodeparcial/contratacion.c
+1538091319 source:/home/alumno/Escritorio/Class02/Modelodeparcial/contratacion.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
@@ -31,6 +31,6 @@
 	"pantallas.h"
 	"utn.h"
 
-1538009879 /home/alumno/Escritorio/Class02/Modelodeparcial/contratacion.h
+1538091875 /home/alumno/Escritorio/Class02/Modelodeparcial/contratacion.h
 	"pantallas.h"
 

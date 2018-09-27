@@ -11,6 +11,7 @@ float precio;
 int isEmpty;
 }typedef Pantalla;
 
+int altaForzada(Pantalla* pantalla, int limite,char* nombre,int tipo, char* direccion, float precio);
 int cargarDatosVacio(Pantalla* pantalla,int limite);
 int cargarIndice(Pantalla* pantalla,int indice,int limite);
 int mostrarIndice(Pantalla* pantalla,int indice);

@@ -56,32 +56,38 @@ int prod_getEmptyIndexCliente(Contratacion* cliente,int limite,int* indiceVacio)
     }
     return retorno;
 }
-int mostrarContrataciones(Contratacion* cliente,int limite, Pantalla* pantalla)
+int mostrarContrataciones(Contratacion* cliente,int limite, Pantalla* pantalla, char* cuitCliente)
 {
     int i;
+    int indicePantalla;
     if(cliente != NULL && limite > 0)
     {
         for(i=0;i<limite;i++)
         {
-                if(cliente[i].isEmpty==0)
+                if(cliente[i].isEmpty==0 && strcmp(cliente[i].cuitCliente, cuitCliente) == 0)
                 {
-                    mostrarIndice(pantalla, limite);
-                    //printf("\nCUIT del Cliente: %s",cliente[i].cuitCliente);
-                    printf("\nDias de contratacion: %d",cliente[i].dias);
-                    printf("\nID de la pantalla contratada es: %d\n",cliente[i].idPantalla);
+                    indicePantalla = buscarPantallaPorID(pantalla,limite, cliente[i].idPantalla);
+                    printf("nombre: %s",pantalla[indicePantalla].nombre);
+                    printf("\ndireccion: %s",pantalla[indicePantalla].direccion);
+                    printf("\ntipo: %d",pantalla[indicePantalla].tipo);
+                    printf("\nprecio: %.2f",pantalla[indicePantalla].precio);
+                    printf("\nID: %d\n",pantalla[indicePantalla].ID);
+                    printf("\nDias de contratacion: %d\n",cliente[i].dias);
+                    //printf("\nID de la pantalla contratada es: %d\n",cliente[i].idPantalla);
                 }
         }
 
     }
     return 0;
 }
-int buscarContratacionPorCUIT(Contratacion* cliente, int limite, char* cuitCliente)
+int buscarContratacionPorCUIT(Contratacion* cliente, int limite, char* cuitCliente,int id)
 {
     int i;
     int retorno = -1;
     for(i = 0; i < limite; i++)
     {
-        if(cliente[i].isEmpty == 0 && strcmp(cliente[i].cuitCliente, cuitCliente) == 0)
+        if(cliente[i].isEmpty == 0 && strcmp(cliente[i].cuitCliente, cuitCliente) == 0
+        && cliente[i].idPantalla == id)
         {
             retorno = 0;
             break;
@@ -102,4 +108,63 @@ static int generarID(void)
 {
     static int cont = -1;
     return ++cont;
+}
+int borrarContratacionPorID(Contratacion* cliente, int id, int limite, char* cuitCliente)
+{
+    int retorno = -1;
+    int i;
+    for(i = 0; i < limite; i++)
+    {
+        if(cliente[i].isEmpty == 0 && cliente[i].idPantalla == id && strcmp(cliente[i].cuitCliente, cuitCliente) == 0)
+        {
+            cliente[i].isEmpty = -1;
+            retorno = 0;
+            printf("\nLa contratacion fue cancelada\n");
+            break;
+        }
+    }
+    return retorno;
+}
+int mostrarImporteDeContrataciones(Contratacion* cliente,int limite, Pantalla* pantalla, char* cuitCliente)
+{
+    int i;
+    int indicePantalla;
+    float total;
+    if(cliente != NULL && limite > 0)
+    {
+        for(i=0;i<limite;i++)
+        {
+                if(cliente[i].isEmpty==0 && strcmp(cliente[i].cuitCliente, cuitCliente) == 0)
+                {
+                    indicePantalla = buscarPantallaPorID(pantalla,limite, cliente[i].idPantalla);
+                    total = pantalla[indicePantalla].precio * cliente[i].dias;
+                    printf("\nprecio de la facturacion %d es: %.2f\n",i+1,total);
+                }
+        }
+
+    }
+    return 0;
+}
+int mostrarContratacionesTotales(Contratacion* cliente,int limite, Pantalla* pantalla)
+{
+    int i;
+    int indicePantalla;
+    if(cliente != NULL && limite > 0)
+    {
+        for(i=0;i<limite;i++)
+        {
+                if(cliente[i].isEmpty==0)
+                {
+                    indicePantalla = buscarPantallaPorID(pantalla,limite, cliente[i].idPantalla);
+                    printf("\nnombre de pantalla: %s\n",pantalla[indicePantalla].nombre);
+                    printf("nombre del video: %s\n", cliente[i].nombreVideo);
+                    printf("cantidad de dias contratados: %d\n", cliente[i].dias);
+                    printf("CUIT del Cliente: %s\n", cliente[i].cuitCliente);
+                    //printf("\nID de la pantalla contratada es: %d\n",cliente[i].idPantalla);
+
+                }
+        }
+
+    }
+    return 0;
 }

@@ -5,6 +5,26 @@
 #include "utn.h"
 static int generarID(void);
 
+int altaForzada(Pantalla* pantalla, int limite,char* nombre,int tipo, char* direccion, float precio)
+{
+    int retorno = -1;
+    int indiceVacio;
+    prod_getEmptyIndex(pantalla,limite, &indiceVacio);
+    if(pantalla != NULL && limite >0)
+    {
+          if(indiceVacio >= 0)
+          {
+            strncpy(pantalla[indiceVacio].nombre,nombre,128);
+            pantalla[indiceVacio].tipo=tipo;
+            pantalla[indiceVacio].precio=precio;
+            strncpy(pantalla[indiceVacio].direccion,direccion,128);
+            pantalla[indiceVacio].ID=generarID();
+            pantalla[indiceVacio].isEmpty=0;
+            retorno =0;
+          }
+    }
+    return retorno;
+}
 int cargarDatosVacio(Pantalla* pantalla, int limite)
 {
     int i;
