@@ -7,18 +7,30 @@
 
 1537484290 /home/alumno/Escritorio/Class02/Modelodeparcial/utn.h
 
-1537492351 source:/home/alumno/Escritorio/Class02/Modelodeparcial/main.c
+1538010158 source:/home/alumno/Escritorio/Class02/Modelodeparcial/main.c
 	<stdio_ext.h>
 	<stdlib.h>
 	"pantallas.h"
 	"utn.h"
+	"contratacion.h"
 
-1537490866 /home/alumno/Escritorio/Class02/Modelodeparcial/pantallas.h
+1538002484 /home/alumno/Escritorio/Class02/Modelodeparcial/pantallas.h
 
-1537491522 source:/home/alumno/Escritorio/Class02/Modelodeparcial/pantallas.c
+1538003934 source:/home/alumno/Escritorio/Class02/Modelodeparcial/pantallas.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
 	"pantallas.h"
 	"utn.h"
+
+1538009891 source:/home/alumno/Escritorio/Class02/Modelodeparcial/contratacion.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"contratacion.h"
+	"pantallas.h"
+	"utn.h"
+
+1538009879 /home/alumno/Escritorio/Class02/Modelodeparcial/contratacion.h
+	"pantallas.h"
 

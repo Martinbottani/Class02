@@ -3,7 +3,8 @@
 #include <string.h>
 #include "pantallas.h"
 #include "utn.h"
-static int buscarPantallaPorID(Pantalla* pantalla, int limite, int id);
+static int generarID(void);
+
 int cargarDatosVacio(Pantalla* pantalla, int limite)
 {
     int i;
@@ -41,24 +42,24 @@ int cargarIndice(Pantalla* pantalla,int indice,int limite)
     }
     return 0;
 }
-int mostrarIndice(Pantalla* pantalla,int indice)
+int mostrarIndice(Pantalla* pantalla,int limite)
 {
-    if(pantalla != NULL && indice > -1)
+    int i;
+    if(pantalla != NULL && limite > 0)
     {
-        if(pantalla[indice].isEmpty==0)
+        for(i=0;i<limite;i++)
         {
-            printf("nombre: %s",pantalla[indice].nombre);
-            printf("\ndireccion: %s",pantalla[indice].direccion);
-            printf("\ntipo: %d",pantalla[indice].tipo);
-            printf("\nprecio: %.2f",pantalla[indice].precio);
-            printf("\nID: %d\n",pantalla[indice].ID);
+            if(pantalla[i].isEmpty==0)
+            {
+                printf("nombre: %s",pantalla[i].nombre);
+                printf("\ndireccion: %s",pantalla[i].direccion);
+                printf("\ntipo: %d",pantalla[i].tipo);
+                printf("\nprecio: %.2f",pantalla[i].precio);
+                printf("\nID: %d\n",pantalla[i].ID);
+            }
         }
-        else
-        {
-            printf("Esta Vacio");
-        }
-    }
 
+    }
     return 0;
 }
 int prod_getEmptyIndex(Pantalla* pantalla,int limite,int* indiceVacio)
@@ -78,12 +79,12 @@ int prod_getEmptyIndex(Pantalla* pantalla,int limite,int* indiceVacio)
     return retorno;
 }
 
-int generarID(void)
+static int generarID(void)
 {
     static int cont = -1;
     return ++cont;
 }
-static int buscarPantallaPorID(Pantalla* pantalla, int limite, int id)
+int buscarPantallaPorID(Pantalla* pantalla, int limite, int id)
 {
     int i;
     int retorno = -1;
@@ -122,4 +123,19 @@ int modificarID(Pantalla* pantalla, int indice, int limite)
         }
     }
     return 0;
+}
+int borrarPantallaPorID(Pantalla* pantalla, int id, int limite)
+{
+    int retorno = -1;
+    int i;
+    for(i = 0; i < limite; i++)
+    {
+        if(pantalla[i].isEmpty == 0 && pantalla[i].ID == id)
+        {
+            pantalla[i].isEmpty = -1;
+            retorno = 0;
+            break;
+        }
+    }
+    return retorno;
 }

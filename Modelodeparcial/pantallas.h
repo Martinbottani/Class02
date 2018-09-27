@@ -15,7 +15,7 @@ int cargarDatosVacio(Pantalla* pantalla,int limite);
 int cargarIndice(Pantalla* pantalla,int indice,int limite);
 int mostrarIndice(Pantalla* pantalla,int indice);
 int prod_getEmptyIndex(Pantalla* pantalla,int limite,int* indiceVacio);
-int generarID(void);
+int buscarPantallaPorID(Pantalla* pantalla, int limite, int id);
 int modificarID(Pantalla* pantalla, int indice, int limite);
-
+int borrarPantallaPorID(Pantalla* pantalla, int id, int limite);
 #endif // PANTALLAS_H_INCLUDED
