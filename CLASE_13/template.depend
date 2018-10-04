@@ -205,3 +205,55 @@
 	<string.h>
 	"utn.h"
 
+1538507339 source:/home/alumno/Escritorio/Class02/CLASE_13/Contratacion.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"Contratacion.h"
+	"utn.h"
+	"pantalla.h"
+
+1525304648 /home/alumno/Escritorio/Class02/CLASE_13/Contratacion.h
+	"pantalla.h"
+
+1525298484 /home/alumno/Escritorio/Class02/CLASE_13/pantalla.h
+
+1524691840 /home/alumno/Escritorio/Class02/CLASE_13/utn.h
+
+1538614233 source:/home/alumno/Escritorio/Class02/CLASE_13/informar.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"Contratacion.h"
+	"utn.h"
+	"pantalla.h"
+
+1525298484 source:/home/alumno/Escritorio/Class02/CLASE_13/pantalla.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"pantalla.h"
+	"utn.h"
+
+1524691840 source:/home/alumno/Escritorio/Class02/CLASE_13/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1538614251 source:/home/alumno/Escritorio/Class02/CLASE_13/main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"pantalla.h"
+	"utn.h"
+	"Contratacion.h"
+	"informar.h"
+
+1538614576 /home/alumno/Escritorio/Class02/CLASE_13/informar.h
+

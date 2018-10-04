@@ -5,7 +5,78 @@
 #include "Contratacion.h"
 #include "utn.h"
 #include "pantalla.h"
+#include "informar.h"
+typedef struct
+{
+    char cuit[50];
+    float importe;
+    int cantidadContrataciones;
+    int isEmpty;
+} InfoCliente;
+static void initInfoCliente(Contratacion* arrayC,int limiteC, InfoCliente* arrayIC, int limiteIC);
+static int estaCuitEnInitInfoCliente(InfoCliente* arrayIC, int limiteIC, char cuitCliente);
+static void cargaInfoCliente(Contratacion* arrayC,int limiteC, InfoCliente* arrayIC, int limiteIC,
+                            Pantalla* pantallas, int lenPantallas);
+InfoCliente arrayIC[1000];
 
+static void initInfoCliente(Contratacion* arrayC,int limiteC, InfoCliente* arrayIC, int limiteIC)
+{
+    int i;
+    int proximoLibre = 0;
+    for(i=0; i < limiteIC; i++)
+    {
+        arrayIC[i].isEmpty = 1;
+    }
+    for(i=0; i < limiteC; i++)
+    {
+        if(!estaCuitEnInitInfoCliente(arrayIC, limiteIC, arrayC[i].cuit))
+        {
+            strcpy(arrayIC[proximoLibre].cuit, arrayC[i].cuit);
+            arrayIC[proximoLibre].isEmpty = 0;
+            proximoLibre++;
+        }
+    }
+}
+static void cargaInfoCliente(Contratacion* arrayC,int limiteC, InfoCliente* arrayIC, int limiteIC,
+                            Pantalla* pantallas, int lenPantallas)
+{
+    int i;
+    int j;
+    int cantidadContrataciones;
+    Pantalla auxPantalla;
+    for(i=0; i < limiteIC; i++)
+    {
+        if(!arrayIC[i].isEmpty)
+        {
+            arrayIC[i].importe = 0;
+            for(j=0; j < limiteC; j++)
+            {
+                cantidadContrataciones = 0;
+                if(!strcmp(arrayIC[i].cuit, arrayC[i].cuit))
+                {
+                    cantidadContrataciones++;
+                    arrayIC[i].cantidadContrataciones++;
+                    auxPantalla = getPantallaById(pantallas, lenPantallas, arrayC[j].idPantalla);
+                    arrayIC[i].importe += auxPantalla->precio * arrayC[j].dias;
+                }
+            }
+        }
+    }
+}
+static int estaCuitEnInitInfoCliente(InfoCliente* arrayIC, int limiteIC, char cuitCliente)
+{
+    int i;
+    int retorno = -1;
+    for(i=0; i < limiteIC; i++)
+    {
+       if(!arrayIC[i].isEmpty && !strcmp(arrayIC[i].cuit, cuitCliente))
+       {
+            retorno = 0;
+            break;
+       }
+    }
+    return retorno;
+}
 
 int informar_ConsultaFacturacion(Contratacion* arrayC,int limite,
               Pantalla* pantallas, int lenPantallas, char* cuit)
@@ -119,7 +190,7 @@ int informar_pantallasValorMenor(Pantalla* pantallaArray, int limite)
     {
         for(i=0; i < limite - 1; i++)
         {
-            if(pantallaArray->isEmpty !=0)
+            if(pantallaArray[i].isEmpty !=0)
             {
                 continue;
             }
