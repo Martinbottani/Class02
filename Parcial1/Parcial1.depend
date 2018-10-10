@@ -34,3 +34,40 @@
 
 1538702504 /home/alumno/Escritorio/Parcial1/ventas.h
 
+1539156609 source:c:\users\martin\desktop\utn\class02\parcial1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"clientes.h"
+	"ventas.h"
+
+1539148333 c:\users\martin\desktop\utn\class02\parcial1\utn.h
+
+1539152334 c:\users\martin\desktop\utn\class02\parcial1\clientes.h
+	"ventas.h"
+
+1539153896 c:\users\martin\desktop\utn\class02\parcial1\ventas.h
+
+1539148333 source:c:\users\martin\desktop\utn\class02\parcial1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1539155484 source:c:\users\martin\desktop\utn\class02\parcial1\ventas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"ventas.h"
+	"utn.h"
+
+1539156145 source:c:\users\martin\desktop\utn\class02\parcial1\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"ventas.h"
+	"utn.h"
+

@@ -1,4 +1,4 @@
-#include <stdio_ext.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "clientes.h"
@@ -7,6 +7,28 @@
 #define A_COBRAR 1
 #define COBRADA 0
 static int generarID(void);
+
+int venta_cargaForzadaVenta(Venta* pVentas,int limite,char* nombreArchivo, char* zona, int estado, int cantAfiches, int idCliente)
+{
+    int retorno=-1;
+    int indice;
+    vent_indicesVacios(pVentas, limite, &indice);
+    if(pVentas != NULL && limite >0)
+    {
+          if(indice >= 0)
+          {
+            strncpy(pVentas[indice].nombreArchivo,nombreArchivo,128);
+            strncpy(pVentas[indice].zona,zona,128);
+            pVentas[indice].estado = estado;
+            pVentas[indice].cantAfiches=cantAfiches;
+            pVentas[indice].idCliente = idCliente;
+            pVentas[indice].idVenta = generarID();
+            pVentas[indice].isEmpty = 0;
+            retorno =0;
+          }
+    }
+    return retorno;
+}
 
 int vent_cargarDatosVacio(Venta* pVentas, int limite)
 {
@@ -111,9 +133,8 @@ int vent_mostrarVentas(Venta* pVentas,int limite)
                 }
                 else
                 {
-                    printf("El estado de la venta es: COBRADO");
+                    printf("El estado de la venta es: COBRADO\n");
                 }
-                pVentas[i].estado = A_COBRAR;
                 retorno = 0;
             }
         }
@@ -159,39 +180,37 @@ int vent_buscarVentaPorID(Venta* pVentas, int limite, int id)
     return retorno;
 }
 
-int mostrarClientesVentas(Venta* pVenta,int limite, Cliente* pCliente)
-{
-    int retorno = -1;
-    int i;
-    int indiceCliente;
-    if(pVenta != NULL && limite > 0)
-    {
-        for(i=0;i<limite;i++)
-        {
-                if(pVenta[i].isEmpty==0)
-                {
-                    indiceCliente = client_buscarClientePorID(pCliente,limite, pVenta[i].idCliente);
-                    printf("Nombre de Cliente: %s",pCliente[indiceCliente].nombre);
-                    printf("\nApellido de Cliente: %s",pCliente[indiceCliente].apellido);
-                    printf("\nCuit de Cliente: %s",pCliente[indiceCliente].cuitCliente);
-                    printf("\nID de Cliente: %d\n",pCliente[indiceCliente].ID);
-                    retorno = 0;
-                }
-        }
-    }
-    return retorno;
-}
-
 int vent_modificarEstado(Venta* pVentas, int indice, int limite)
 {
-    int retorno = -1;
     int est;
-    if(utn_getEntero(&est,2,"\nQuiere cambiar el estado? Si = 1/No = 0\n","\nError\n",2,-1) == 0)
+    if(pVentas[indice].estado == A_COBRAR)
     {
-        if(est == 1)
+        if(utn_getEntero(&est,2,"\nQuiere cambiar el estado? Si = 1/No = 0\n","\nError\n",2,-1) == 0)
         {
-            pVentas[indice].estado = COBRADA;
-            retorno = 0;
+            if(est == 1)
+            {
+                pVentas[indice].estado = COBRADA;
+                printf("\nEl estado de la venta fue cambiado.\n");
+            }
+        }
+    }
+    else
+    {
+        printf("\nSolo puede cambiar las ventas con el estado 'A COBRAR'.\n");
+    }
+
+    return 0;
+}
+
+int vent_cantidadDeVentasDeClientes(Venta* pVentas,int limite,int id)
+{
+    int retorno = 0;
+    int i;
+    for(i = 0; i < limite; i++)
+    {
+        if(pVentas[i].isEmpty == 0 && pVentas[i].idCliente == id && pVentas[i].estado == 1)
+        {
+            retorno++;
         }
     }
     return retorno;

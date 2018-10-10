@@ -1,7 +1,8 @@
-#include <stdio_ext.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "clientes.h"
+#include "ventas.h"
 #include "utn.h"
 
 static int generarID(void);
@@ -30,10 +31,13 @@ int client_cargarDatosVacio(Cliente* pClientes, int limite)
 {
     int retorno = -1;
     int i;
-    for(i=0;i<limite;i++)
+    if(pClientes != NULL && limite > 0)
     {
-        pClientes[i].isEmpty=-1;
-        retorno = 0;
+        for(i = 0; i < limite; i++)
+        {
+            pClientes[i].isEmpty = -1;
+        }
+        retorno=0;
     }
     return retorno;
 }
@@ -70,15 +74,18 @@ int client_indicesVacios(Cliente* pClientes,int limite,int* indiceVacio)
 {
     int i=0;
     int retorno = -1;
-    while(i<limite)
+    if(pClientes != NULL && limite > 0)
     {
-        if(pClientes[i].isEmpty==-1)
+         while(i<limite)
         {
-            *indiceVacio=i;
-            retorno = 0;
-            break;
+            if(pClientes[i].isEmpty == -1)
+            {
+                *indiceVacio = i;
+                retorno = 0;
+                break;
+            }
+            i++;
         }
-        i++;
     }
     return retorno;
 }
@@ -131,6 +138,25 @@ int client_mostrarIndice(Cliente* pClientes,int limite)
     return retorno;
 }
 
+int client_mostrarUnIndice(Cliente* pClientes,int limite,int indice)
+{
+    int retorno=-1;
+    if(pClientes != NULL && limite > 0 && indice >= 0)
+    {
+        if(pClientes[indice].isEmpty == 0)
+        {
+            printf("Nombre de Cliente: %s",pClientes[indice].nombre);
+            printf("\nApellido de Cliente: %s",pClientes[indice].apellido);
+            printf("\nCuit de Cliente: %s",pClientes[indice].cuitCliente);
+            printf("\nID de Cliente: %d\n",pClientes[indice].ID);
+            retorno = 0;
+        }
+
+    }
+
+    return retorno;
+}
+
 int client_buscarClientePorID(Cliente* pClientes, int limite, int id)
 {
     int i;
@@ -146,6 +172,31 @@ int client_buscarClientePorID(Cliente* pClientes, int limite, int id)
     return retorno;
 }
 
+
+int client_mostrarIndiceConVentas(Cliente* pClientes, int limite, Venta* pVentas, int limite2)
+{
+    int retorno = -1;
+    int i;
+    int cantVentas;
+    if(pClientes != NULL && limite > 0)
+    {
+        for(i=0;i<limite;i++)
+        {
+            if(pClientes[i].isEmpty==0)
+            {
+                cantVentas = vent_cantidadDeVentasDeClientes(pVentas, limite2, pClientes[i].ID);
+                printf("\nID del cliente es: %d", pClientes[i].ID);
+                printf("\nNombre del cliente es: %s", pClientes[i].nombre);
+                printf("\nApellido del cliente es: %s", pClientes[i].apellido);
+                printf("\nCUIT del cliente es: %s", pClientes[i].cuitCliente);
+                printf("\nCantidad de ventas a cobrar que posee es: %d\n",cantVentas);
+                retorno = 0;
+            }
+        }
+    }
+    return retorno;
+}
+
 int client_modificarID(Cliente* pCliente, int indice, int limite)
 {
     int retorno = -1;
@@ -153,7 +204,7 @@ int client_modificarID(Cliente* pCliente, int indice, int limite)
     char auxApellido[51];
     char auxCUIT[128];
     int id;
-    id=client_buscarClientePorID(pCliente,limite,indice);
+    id = client_buscarClientePorID(pCliente,limite,indice);
     printf("Nuevo nombre:\n");
     if(utn_getString(auxNombre,51)==0)
     {
