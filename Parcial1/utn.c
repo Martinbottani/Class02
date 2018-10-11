@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "utn.h"
@@ -9,7 +9,7 @@ static int isInt(char* pBuffer);
 
 int utn_getString(char* pBufferString,int limite)
 {
-    fflush(stdin);
+    __fpurge(stdin);
     fgets(pBufferString,limite,stdin);
     if(pBufferString[strlen(pBufferString)-1]=='\n')
     {

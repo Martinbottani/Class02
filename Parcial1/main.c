@@ -1,11 +1,12 @@
-#include <stdio.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "utn.h"
 #include "clientes.h"
+#include "informar.h"
 #include "ventas.h"
-#define CANT_CLIENTES 10
-#define CANT_VENTAS 10
+#define CANT_CLIENTES 1000
+#define CANT_VENTAS 1000
 int main()
 {
     Cliente cliente[CANT_CLIENTES];
@@ -22,10 +23,20 @@ int main()
     client_altaForzada(cliente, CANT_CLIENTES, "Agustina", "Torres", "20612579469");
     client_altaForzada(cliente, CANT_CLIENTES, "Nahuel", "Nuñez", "20143265879");
     client_altaForzada(cliente, CANT_CLIENTES, "Martin", "Bottani", "20400143529");
-    venta_cargaForzadaVenta(ventas,CANT_VENTAS,"HOLA123","ZONA SUR", 1,30,0);
-    venta_cargaForzadaVenta(ventas,CANT_VENTAS,"sarasa","CABA", 1,45,3);
-    venta_cargaForzadaVenta(ventas,CANT_VENTAS,"123NOTECALENTES","ZONA NORTE", 0,75,1);
-    venta_cargaForzadaVenta(ventas,CANT_VENTAS,"ROBLOX","CABA", 0,100,2);
+    vent_cargaForzadaVenta(ventas,CANT_VENTAS,"HOLA123","ZONA SUR", 1,30,0);
+    vent_cargaForzadaVenta(ventas,CANT_VENTAS,"HOLA123","ZONA SUR", 1,30,0);
+    vent_cargaForzadaVenta(ventas,CANT_VENTAS,"HOLA123","ZONA SUR", 1,30,0);
+    vent_cargaForzadaVenta(ventas,CANT_VENTAS,"sarasa","CABA", 1,45,3);
+    vent_cargaForzadaVenta(ventas,CANT_VENTAS,"sarasa","CABA", 1,45,3);
+    vent_cargaForzadaVenta(ventas,CANT_VENTAS,"sarasa","CABA", 1,45,3);
+    vent_cargaForzadaVenta(ventas,CANT_VENTAS,"sarasa","CABA", 1,45,3);
+    vent_cargaForzadaVenta(ventas,CANT_VENTAS,"sarasa","CABA", 1,45,3);
+    vent_cargaForzadaVenta(ventas,CANT_VENTAS,"123NOTECALENTES","ZONA NORTE", 0,75,1);
+    vent_cargaForzadaVenta(ventas,CANT_VENTAS,"123NOTECALENTES","ZONA NORTE", 0,75,1);
+    vent_cargaForzadaVenta(ventas,CANT_VENTAS,"123NOTECALENTES","ZONA NORTE", 0,75,1);
+    vent_cargaForzadaVenta(ventas,CANT_VENTAS,"123NOTECALENTES","ZONA NORTE", 0,75,1);
+    vent_cargaForzadaVenta(ventas,CANT_VENTAS,"ROBLOX","CABA", 0,100,2);
+    vent_cargaForzadaVenta(ventas,CANT_VENTAS,"ROBLOX","CABA", 0,100,2);
     do
     {
         if(client_chequearIndice(cliente,CANT_CLIENTES) == -1)
@@ -36,7 +47,7 @@ int main()
         {
             bandera = 0;
         }
-        utn_getEntero(&op,3,"\n1-Cargar un cliente\n2-Modificar datos de cliente por ID\n3-Baja de cliente por ID\n4-Vender afiches\n5-Editar venta\n6-Cobrar venta\n7-Lista de clientes\n8-Salir\n","Error\n",8,0);
+        utn_getEntero(&op,3,"\n1-Cargar un cliente\n2-Modificar datos de cliente por ID\n3-Baja de cliente por ID\n4-Vender afiches\n5-Editar venta\n6-Cobrar venta\n7-Lista de clientes\n8-Cliente con mayor ventas a cobrar\n9-Clientes con mayor ventas cobradas\n10-Cliente con mayor ventas\n11-Cliente con cantidad de afiches a cobrar\n12-Cliente con cantidad de afiches cobrados\n13-Salir\n","Error\n",13,0);
         switch(op)
         {
                 case 1:
@@ -110,7 +121,7 @@ int main()
                                 {
                                     if(vent_cargarIndice(ventas, indiceVacio, CANT_VENTAS, id) ==0)
                                     {
-                                        vent_mostrarIndice(ventas,CANT_VENTAS);
+                                        vent_mostrarUnIndice(ventas,CANT_VENTAS,indiceVacio);
                                     }
                                 }
                             }
@@ -174,10 +185,90 @@ int main()
                         client_mostrarIndiceConVentas(cliente,CANT_CLIENTES,ventas,CANT_VENTAS);
                     }else
                     {
-                        printf("\n||No hay datos cargados||\n");
+                        printf("\nNo hay datos cargados\n");
                     }
                     break;
                 case 8:
+                    if(bandera == 1)
+                    {
+                        if(inf_ClienteConMasVentas(cliente, ventas,CANT_CLIENTES,CANT_VENTAS) == 0)
+                        {
+                            printf("\nFin de la lista.\n");
+                        }
+                        else
+                        {
+                            printf("\nNo hay cliente con mayor ventas a cobrar.\n");
+                        }
+                    }else
+                    {
+                        printf("\nNo hay datos cargados\n");
+                    }
+                    break;
+                case 9:
+                    if(bandera == 1)
+                    {
+                        if(inf_ClienteConMasVentasCobradas(cliente, ventas,CANT_CLIENTES,CANT_VENTAS) == 0)
+                        {
+                            printf("\nFin de la lista.\n");
+                        }
+                        else
+                        {
+                            printf("\nNo hay cliente con mayor ventas a cobrar.\n");
+                        }
+                    }else
+                    {
+                        printf("\nNo hay datos cargados\n");
+                    }
+                    break;
+                case 10:
+                    if(bandera == 1)
+                    {
+                        if(inf_ClienteConMasVentasTotales(cliente, ventas,CANT_CLIENTES,CANT_VENTAS) == 0)
+                        {
+                            printf("\nFin de la lista.\n");
+                        }
+                        else
+                        {
+                            printf("\nNo hay cliente con mayor ventas a cobrar.\n");
+                        }
+                    }else
+                    {
+                        printf("\nNo hay datos cargados\n");
+                    }
+                    break;
+                case 11:
+                    if(bandera == 1)
+                    {
+                        if(inf_ClienteConMasAfiches(cliente, ventas,CANT_CLIENTES,CANT_VENTAS) == 0)
+                        {
+                            printf("\nFin de la lista.\n");
+                        }
+                        else
+                        {
+                            printf("\nNo hay cliente con mayor ventas a cobrar.\n");
+                        }
+                    }else
+                    {
+                        printf("\nNo hay datos cargados\n");
+                    }
+                    break;
+                case 12:
+                if(bandera == 1)
+                    {
+                        if(inf_ClienteConMasAfichesCobrados(cliente, ventas,CANT_CLIENTES,CANT_VENTAS) == 0)
+                        {
+                            printf("\nFin de la lista.\n");
+                        }
+                        else
+                        {
+                            printf("\nNo hay cliente con mayor ventas a cobrar.\n");
+                        }
+                    }else
+                    {
+                        printf("\nNo hay datos cargados\n");
+                    }
+                    break;
+                case 13:
                 salir = 1;
         }
     }while(salir==0);

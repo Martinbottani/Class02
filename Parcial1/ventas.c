@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "clientes.h"
@@ -8,7 +8,7 @@
 #define COBRADA 0
 static int generarID(void);
 
-int venta_cargaForzadaVenta(Venta* pVentas,int limite,char* nombreArchivo, char* zona, int estado, int cantAfiches, int idCliente)
+int vent_cargaForzadaVenta(Venta* pVentas,int limite,char* nombreArchivo, char* zona, int estado, int cantAfiches, int idCliente)
 {
     int retorno=-1;
     int indice;
@@ -48,7 +48,7 @@ int vent_cargarIndice(Venta* pVentas,int indice,int limite, int idCliente)
     char auxNombreArchivo[128];
     char auxZona[128];
     int auxAfiches;
-    printf("Nombre del Video:\n");
+    printf("Nombre del Archivo:\n");
     if(utn_getString(auxNombreArchivo,128)==0)
     {
         if(utn_getEntero(&auxAfiches,2,"Cuantos afiches?: \n", "\nError\n",364,0) == 0)
@@ -62,6 +62,7 @@ int vent_cargarIndice(Venta* pVentas,int indice,int limite, int idCliente)
                         pVentas[indice].isEmpty = 0;
                         pVentas[indice].idVenta = generarID();
                         pVentas[indice].idCliente = idCliente;
+                        pVentas[indice].estado = A_COBRAR;
                         retorno = 0;
                 }
         }
@@ -112,6 +113,31 @@ int vent_mostrarIndice(Venta* pVentas,int limite)
     }
     return retorno;
 }
+
+int vent_mostrarUnIndice(Venta* pVentas,int limite,int indice)
+{
+    int retorno=-1;
+    if(pVentas != NULL && limite > 0 && indice >= 0)
+    {
+        if(pVentas[indice].isEmpty == 0)
+        {
+            printf("\nEl ID de la venta es: %d", pVentas[indice].idVenta);
+            printf("\nLa cantidad de afiches es: %d", pVentas[indice].cantAfiches);
+            printf("\nEl nombre del archivo es: %s",pVentas[indice].nombreArchivo);
+            printf("\nLa zona es: %s",pVentas[indice].zona);
+            printf("\nEl ID del cliente es: %d",pVentas[indice].idCliente);
+            if(pVentas[indice].estado == 1)
+            {
+                printf("\nEl estado de la venta es: A COBRAR\n");
+            }
+            retorno = 0;
+        }
+
+    }
+
+    return retorno;
+}
+
 int vent_mostrarVentas(Venta* pVentas,int limite)
 {
     int retorno = -1;
@@ -202,16 +228,4 @@ int vent_modificarEstado(Venta* pVentas, int indice, int limite)
     return 0;
 }
 
-int vent_cantidadDeVentasDeClientes(Venta* pVentas,int limite,int id)
-{
-    int retorno = 0;
-    int i;
-    for(i = 0; i < limite; i++)
-    {
-        if(pVentas[i].isEmpty == 0 && pVentas[i].idCliente == id && pVentas[i].estado == 1)
-        {
-            retorno++;
-        }
-    }
-    return retorno;
-}
+

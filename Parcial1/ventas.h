@@ -10,14 +10,15 @@ int isEmpty;
 int estado;
 }typedef Venta;
 
-int venta_cargaForzadaVenta(Venta* pVentas,int limite,char* nombreArchivo, char* zona, int estado, int cantAfiches, int idCliente);
+int vent_cargaForzadaVenta(Venta* pVentas,int limite,char* nombreArchivo, char* zona, int estado, int cantAfiches, int idCliente);
 int vent_cargarDatosVacio(Venta* pVentas, int limite);
 int vent_cargarIndice(Venta* pVentas,int indice,int limite, int idCliente);
 int vent_indicesVacios(Venta* pVentas,int limite,int* indiceVacio);
 int vent_mostrarIndice(Venta* pVentas,int limite);
+int vent_mostrarUnIndice(Venta* pVenta,int limite,int indice);
 int vent_mostrarVentas(Venta* pVentas,int limite);
 int vent_modificarVenta(Venta* pVentas, int indice, int limite);
 int vent_buscarVentaPorID(Venta* pVentas, int limite, int id);
 int vent_modificarEstado(Venta* pVentas, int indice, int limite);
-int vent_cantidadDeVentasDeClientes(Venta* pVentas,int limite,int id);
+
 #endif // VENTAS_H_INCLUDED

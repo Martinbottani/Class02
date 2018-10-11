@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "clientes.h"
@@ -184,7 +184,7 @@ int client_mostrarIndiceConVentas(Cliente* pClientes, int limite, Venta* pVentas
         {
             if(pClientes[i].isEmpty==0)
             {
-                cantVentas = vent_cantidadDeVentasDeClientes(pVentas, limite2, pClientes[i].ID);
+                cantVentas = inf_cantidadDeVentasDeClientes(pVentas, limite2, pClientes[i].ID);
                 printf("\nID del cliente es: %d", pClientes[i].ID);
                 printf("\nNombre del cliente es: %s", pClientes[i].nombre);
                 printf("\nApellido del cliente es: %s", pClientes[i].apellido);

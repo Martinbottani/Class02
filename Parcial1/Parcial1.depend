@@ -71,3 +71,51 @@
 	"ventas.h"
 	"utn.h"
 
+1539216557 source:/home/alumno/Escritorio/Class02/Parcial1/clientes.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"ventas.h"
+	"utn.h"
+
+1539207232 /home/alumno/Escritorio/Class02/Parcial1/clientes.h
+	"ventas.h"
+
+1539216504 /home/alumno/Escritorio/Class02/Parcial1/ventas.h
+
+1539207232 /home/alumno/Escritorio/Class02/Parcial1/utn.h
+
+1539215089 source:/home/alumno/Escritorio/Class02/Parcial1/main.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"clientes.h"
+	"informar.h"
+	"ventas.h"
+
+1539207284 source:/home/alumno/Escritorio/Class02/Parcial1/utn.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1539216502 source:/home/alumno/Escritorio/Class02/Parcial1/ventas.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"ventas.h"
+	"utn.h"
+
+1539216576 source:/home/alumno/Escritorio/Class02/Parcial1/informar.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"ventas.h"
+	"utn.h"
+
+1539216498 /home/alumno/Escritorio/Class02/Parcial1/informar.h
+
