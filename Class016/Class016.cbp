@@ -38,6 +38,14 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="service.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="service.h" />
+		<Unit filename="user.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
