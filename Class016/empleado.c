@@ -58,9 +58,11 @@ static int isValidNombre(char* nombre)
 {
     return 1;
 }
-int emp_compareNombre(Empleado* thisA, Empleado* thisB)
+int emp_compareNombre(void* thisA, void* thisB)
 {
-    return strcmp(thisA->nombre, thisB->nombre);
+    Empleado* A = (Empleado*)thisA;
+    Empleado* B = (Empleado*)thisB;
+    return strcmp(A->nombre, B->nombre);
 }
 // Apellido
 int emp_setApellido(Empleado* this, char* apellido)

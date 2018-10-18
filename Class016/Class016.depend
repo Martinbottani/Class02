@@ -1,14 +1,32 @@
 # depslib dependency file v1.0
-1539818908 source:/home/alumno/Escritorio/Class02/Class016/main.c
+1539825229 source:/home/alumno/Escritorio/Class02/Class016/main.c
 	<stdio.h>
 	<stdlib.h>
 	"empleado.h"
+	"service.h"
+	"user.h"
 
-1539818503 /home/alumno/Escritorio/Class02/Class016/empleado.h
+1539825335 /home/alumno/Escritorio/Class02/Class016/empleado.h
 
-1539819088 source:/home/alumno/Escritorio/Class02/Class016/empleado.c
+1539825523 source:/home/alumno/Escritorio/Class02/Class016/empleado.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"empleado.h"
+
+1539823206 /home/alumno/Escritorio/Class02/Class016/service.h
+
+1539823217 source:/home/alumno/Escritorio/Class02/Class016/service.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"service.h"
+
+1539823986 source:/home/alumno/Escritorio/Class02/Class016/user.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"user.h"
+
+1539823639 /home/alumno/Escritorio/Class02/Class016/user.h
 

@@ -17,6 +17,6 @@ int emp_setApellido(Empleado* this, char* apellido);
 int emp_getApellido(Empleado* this, char* apellido);
 int emp_setAltura(Empleado* this, float altura);
 int emp_getAltura(Empleado* this, float* altura); //Siempre recibe un puntero para guardar lo que acabo de obtener.
-int emp_compareNombre(Empleado* thisA, Empleado* thisB); //Es igual a strcmp.
+int emp_compareNombre(void* thisA, void* thisB); //Es igual a strcmp.
 void emp_print(Empleado* this);
 #endif // EMPLEADO_H_INCLUDED
