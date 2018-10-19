@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1539911292 source:/home/alumno/Escritorio/Class02/Class017/clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+
+1539911227 /home/alumno/Escritorio/Class02/Class017/clientes.h
+
+1539909502 source:/home/alumno/Escritorio/Class02/Class017/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+
+1539911292 source:/home/alumno/Escritorio/Class017/clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+
+1539911227 /home/alumno/Escritorio/Class017/clientes.h
+
+1539911299 source:/home/alumno/Escritorio/Class017/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+
