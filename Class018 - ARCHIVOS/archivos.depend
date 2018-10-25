@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1540421510 source:/home/profesor/Ernesto/LABO1/Clase18/archivos/main.c
+	<stdio.h>
+	<stdlib.h>
+
+1540430017 source:/home/alumno/Escritorio/Class02/Class018 - ARCHIVOS/main.c
+	<stdio.h>
+	<stdlib.h>
+	"user.h"
+	<strings.h>
+
+1540424749 /home/alumno/Escritorio/Class02/Class018 - ARCHIVOS/user.h
+
+1540429103 source:/home/alumno/Escritorio/Class02/Class018 - ARCHIVOS/user.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"user.h"
+	"utn.h"
+
+1540426641 source:/home/alumno/Escritorio/Class02/Class018 - ARCHIVOS/utn.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1540426639 /home/alumno/Escritorio/Class02/Class018 - ARCHIVOS/utn.h
+
+1540430124 source:/home/alumno/Escritorio/Class018 - ARCHIVOS/main.c
+	<stdio.h>
+	<stdlib.h>
+	"user.h"
+	<strings.h>
+
+1540424749 /home/alumno/Escritorio/Class018 - ARCHIVOS/user.h
+
+1540429103 source:/home/alumno/Escritorio/Class018 - ARCHIVOS/user.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"user.h"
+	"utn.h"
+
+1540426639 /home/alumno/Escritorio/Class018 - ARCHIVOS/utn.h
+
+1540426641 source:/home/alumno/Escritorio/Class018 - ARCHIVOS/utn.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
