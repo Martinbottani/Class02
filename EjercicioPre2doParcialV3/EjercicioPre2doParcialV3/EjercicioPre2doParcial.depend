@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1542330055 source:/home/alumno/Escritorio/Class02/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/main.c
+	<stdio.h>
+	<stdlib.h>
+	"Compra.h"
+	"LinkedList.h"
+	"Parser.h"
+
+1542330046 /home/alumno/Escritorio/Class02/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/Compra.h
+
+1542237933 /home/alumno/Escritorio/Class02/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/LinkedList.h
+
+1542328367 /home/alumno/Escritorio/Class02/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/Parser.h
+	"LinkedList.h"
+
+1542329609 source:/home/alumno/Escritorio/Class02/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/Parser.c
+	"Compra.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1542329533 source:/home/alumno/Escritorio/Class02/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/Compra.c
+	"Compra.h"
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"utn.h"
+	<string.h>
+
+1542328337 /home/alumno/Escritorio/Class02/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/utn.h
+
+1542242855 source:/home/alumno/Escritorio/Class02/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1542328339 source:/home/alumno/Escritorio/Class02/EjercicioPre2doParcialV3/EjercicioPre2doParcialV3/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"ctype.h"
+
