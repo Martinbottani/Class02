@@ -623,6 +623,31 @@ LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*), int criterion)
     return filterArray;
 }
 
+LinkedList* ll_filter2(LinkedList* this, int id, int (*pFunc)(void*,int))
+{
+    LinkedList* filterArray = NULL;
+    filterArray = ll_newLinkedList();
+    void* pElement;
+    int i;
+    int size = ll_len(this);
+    if(this != NULL && pFunc != NULL)
+    {
+        for(i = 0; i < size; i++)
+        {
+            pElement = ll_get(this, i);
+            if(pFunc(pElement,id) == 1)
+            {
+                ll_add(filterArray, pElement);
+            }
+        }
+    }
+    else
+    {
+        filterArray = NULL;
+    }
+    return filterArray;
+}
+
 void ll_startIter(LinkedList* this)
 {
     if(this != NULL)

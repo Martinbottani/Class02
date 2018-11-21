@@ -58,3 +58,5 @@ LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*), int criterion);
 void ll_startIter(LinkedList* this);
 void* ll_getNext(LinkedList* this);
 int ll_map(LinkedList* this, int (*pFunc)(void*));
+int emp_buscarPantallaPorID(LinkedList* list, int id);
+LinkedList* ll_filter2(LinkedList* this, int id, int (*pFunc)(void*,int));

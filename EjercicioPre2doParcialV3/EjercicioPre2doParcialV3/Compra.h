@@ -12,7 +12,7 @@ struct S_Compra
 };
 typedef struct S_Compra Compra;
 
-void com_calcularMonto(void* p);
+void com_calcularMonto(void* pCompra);
 
 Compra* employee_new();
 Compra* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr, char* sueldoStr, char* ivaStr);
@@ -34,5 +34,7 @@ int employee_setIva(Compra* this, char* iva);
 int employee_getIva(Compra* this, float* iva);
 
 //void employee_mostrar(LinkedList* pArrayListCompra);
+
+int compraIdSeleccionado(void* pCompra, int idProducto);
 
 #endif // COMPRA_H_INCLUDED

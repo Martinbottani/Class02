@@ -344,8 +344,41 @@ void employee_mostrar(LinkedList* pArrayListCompra)
     }
 }
 
+int emp_buscarPantallaPorID(LinkedList* list, int id)
+{
+    int i;
+    int retorno = -1;
+    int size = ll_len(list);
+    Compra* pCompra;
+    if(list != NULL)
+    {
+        for(i = 0; i < size; i++)
+        {
+            pCompra = ll_get(list, i);
+            if(pCompra != NULL && pCompra->idProducto == id)
+            {
+                retorno = i;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
 
-void com_calcularMonto(void* p)
+int compraIdSeleccionado(void* pCompra, int idProducto)
+{
+
+    if(((Compra*)pCompra)->idProducto == idProducto)
+    {
+        return 1;
+    }
+    else
+    {
+        return -1;
+    }
+}
+
+void com_calcularMonto(void* pCompra)
 {
 
 }
