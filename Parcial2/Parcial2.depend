@@ -1,0 +1,69 @@
+# depslib dependency file v1.0
+1542931993 source:/home/alumno/Escritorio/Parcial2/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1542927360 /home/alumno/Escritorio/Parcial2/LinkedList.h
+
+1542932545 source:/home/alumno/Escritorio/Parcial2/main.c
+	<stdio.h>
+	<stdlib.h>
+	"venta.h"
+	"LinkedList.h"
+	"parser.h"
+	"utn.h"
+	"informes.h"
+	"generar.h"
+
+1542926433 source:/home/alumno/Escritorio/Parcial2/parser.c
+	"venta.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1542925468 source:/home/alumno/Escritorio/Parcial2/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"ctype.h"
+
+1542925398 /home/alumno/Escritorio/Parcial2/utn.h
+
+1542931596 source:/home/alumno/Escritorio/Parcial2/venta.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"venta.h"
+	"utn.h"
+	<string.h>
+
+1542926469 /home/alumno/Escritorio/Parcial2/venta.h
+
+1542926328 /home/alumno/Escritorio/Parcial2/parser.h
+
+1542932296 source:/home/alumno/Escritorio/Parcial2/informes.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"venta.h"
+	"utn.h"
+	<string.h>
+
+1542930363 /home/alumno/Escritorio/Parcial2/informes.h
+
+1542932536 source:/home/alumno/Escritorio/Parcial2/generar.c
+	<stdio.h>
+	<stdlib.h>
+	"venta.h"
+	"LinkedList.h"
+	"parser.h"
+	"utn.h"
+	"informes.h"
+	"generar.h"
+
+1542932525 /home/alumno/Escritorio/Parcial2/generar.h
+
