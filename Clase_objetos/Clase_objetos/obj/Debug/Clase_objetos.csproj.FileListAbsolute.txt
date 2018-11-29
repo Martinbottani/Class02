@@ -1,0 +1,6 @@
+C:\Users\alumno\Desktop\Clase_objetos\Clase_objetos\bin\Debug\Clase_objetos.exe.config
+C:\Users\alumno\Desktop\Clase_objetos\Clase_objetos\bin\Debug\Clase_objetos.exe
+C:\Users\alumno\Desktop\Clase_objetos\Clase_objetos\bin\Debug\Clase_objetos.pdb
+C:\Users\alumno\Desktop\Clase_objetos\Clase_objetos\obj\Debug\Clase_objetos.csprojResolveAssemblyReference.cache
+C:\Users\alumno\Desktop\Clase_objetos\Clase_objetos\obj\Debug\Clase_objetos.exe
+C:\Users\alumno\Desktop\Clase_objetos\Clase_objetos\obj\Debug\Clase_objetos.pdb

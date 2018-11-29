@@ -1,0 +1,9 @@
+C:\Users\alumno\Desktop\Clase_objetos2\Clase_objetos2\bin\Debug\Clase_objetos2.exe.config
+C:\Users\alumno\Desktop\Clase_objetos2\Clase_objetos2\bin\Debug\Clase_objetos2.exe
+C:\Users\alumno\Desktop\Clase_objetos2\Clase_objetos2\bin\Debug\Clase_objetos2.pdb
+C:\Users\alumno\Desktop\Clase_objetos2\Clase_objetos2\obj\Debug\Clase_objetos2.csprojResolveAssemblyReference.cache
+C:\Users\alumno\Desktop\Clase_objetos2\Clase_objetos2\obj\Debug\Clase_objetos2.Form1.resources
+C:\Users\alumno\Desktop\Clase_objetos2\Clase_objetos2\obj\Debug\Clase_objetos2.Properties.Resources.resources
+C:\Users\alumno\Desktop\Clase_objetos2\Clase_objetos2\obj\Debug\Clase_objetos2.csproj.GenerateResource.Cache
+C:\Users\alumno\Desktop\Clase_objetos2\Clase_objetos2\obj\Debug\Clase_objetos2.exe
+C:\Users\alumno\Desktop\Clase_objetos2\Clase_objetos2\obj\Debug\Clase_objetos2.pdb
