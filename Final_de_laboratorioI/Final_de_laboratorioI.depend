@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1544746713 source:/home/alumno/Escritorio/Final_de_laboratorioI/envio.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"envio.h"
+	"utn.h"
+	<string.h>
+
+1544746780 /home/alumno/Escritorio/Final_de_laboratorioI/LinkedList.h
+
+1544746749 /home/alumno/Escritorio/Final_de_laboratorioI/envio.h
+	"LinkedList.h"
+
+1542925398 /home/alumno/Escritorio/Final_de_laboratorioI/utn.h
+
+1544747194 source:/home/alumno/Escritorio/Final_de_laboratorioI/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1544746811 source:/home/alumno/Escritorio/Final_de_laboratorioI/main.c
+	<stdio.h>
+	<stdlib.h>
+	"envio.h"
+	"LinkedList.h"
+	"parser.h"
+	"utn.h"
+
+1544740842 source:/home/alumno/Escritorio/Final_de_laboratorioI/parser.c
+	"envio.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1542925468 source:/home/alumno/Escritorio/Final_de_laboratorioI/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"ctype.h"
+
+1544737928 /home/alumno/Escritorio/Final_de_laboratorioI/parser.h
+
